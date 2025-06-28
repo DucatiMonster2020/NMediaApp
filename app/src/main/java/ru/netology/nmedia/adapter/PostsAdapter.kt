@@ -32,14 +32,9 @@ class PostsAdapter(
 }
 
 class PostViewHolder(
-
     private val binding: CardPostBinding,
     private val onInteractionListener: OnInteractionListener,
 ) : RecyclerView.ViewHolder(binding.root) {
-
-    private val urls = listOf("netology.jpg", "sber.jpg", "tcs.jpg", "404.png")
-    private var index = 0
-
 
     fun bind(post: Post) {
         binding.apply {
@@ -48,16 +43,6 @@ class PostViewHolder(
             content.text = post.content
             like.isChecked = post.likedByMe
             like.text = "${post.likes}"
-
-            val url = "http://10.0.2.2:9999/avatars/${urls[index++]}"
-            Glide.with(binding.avatar)
-                .load(url)
-                .circleCrop()
-                .placeholder(R.drawable.ic_loading_100dp)
-                .error(R.drawable.ic_error_100dp)
-                .timeout(10_000)
-                .into(binding.avatar)
-
 
             menu.setOnClickListener {
                 PopupMenu(it.context, it).apply {
