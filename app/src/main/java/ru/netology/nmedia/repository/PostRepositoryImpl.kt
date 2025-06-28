@@ -9,7 +9,6 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Response
-import okhttp3.ResponseBody
 import okhttp3.internal.EMPTY_REQUEST
 import okio.IOException
 import ru.netology.nmedia.dto.Post
